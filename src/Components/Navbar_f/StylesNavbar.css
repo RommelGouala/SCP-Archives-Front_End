@@ -1,0 +1,32 @@
+/* Styling the  for titles p-Tag */
+.Link_nav_p {
+    color: whitesmoke;
+    display: inline-block;
+    margin: 0;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+/* After Hover */
+.Link_nav_p:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px whitesmoke;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.Link_nav_p:hover:after {
+    transform: scaleX(1);
+}
+
+.Link_nav {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#Link_nav_home {
+    text-decoration: none;
+    background-color: transparent;
+    color: aliceblue;
+}
