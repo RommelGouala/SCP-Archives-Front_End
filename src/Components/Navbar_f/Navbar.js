@@ -2,7 +2,7 @@ import './StylesNavbar.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link} from 'react-router-dom'
+import  { Link } from 'react-router-dom'
 
 
 export default function Navbars() {
@@ -20,7 +20,7 @@ export default function Navbars() {
                         >
                             <Nav.Link ><Link to='/' className='Link_nav'><p className="Link_nav_p">HOME</p></Link></Nav.Link>
                             {/* This link will go to the /  : (App.js component) where it feature a Description or signifiaction of the word SCP and its origins (Something like that) */}
-                            <Nav.Link ><Link to='' className='Link_nav'><p className="Link_nav_p">NEWS</p></Link></Nav.Link>
+                            <Nav.Link ><Link to=''  className='Link_nav'><p className="Link_nav_p">NEWS</p></Link></Nav.Link>
                             {/* I just added the news, incase we need it in the future. */}
                             
                             <Nav.Link ><Link to='/scp' className='Link_nav'><p className="Link_nav_p">ARCHIVES</p></Link></Nav.Link>

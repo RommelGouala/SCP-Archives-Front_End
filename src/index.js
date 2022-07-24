@@ -9,15 +9,15 @@ import NewEntry from './Components/New_Entry/New_entry';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
+  <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}/>
-      <Route path="/scp" element={<Scp/>}/>
-      <Route path="/new_entry" element={<NewEntry />}/>
-      <Route path="/" element={<App />}/>
+      <Route path="/" element={<App />} />
+      <Route path="/scp" element={<Scp />} />
+      <Route path="/new_entry" element={<NewEntry />} />
+      <Route path="/" element={<App />} />
     </Routes>
-    </BrowserRouter>
-  
+  </BrowserRouter>
+
 
 );
 
