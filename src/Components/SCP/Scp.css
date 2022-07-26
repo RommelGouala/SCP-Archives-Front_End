@@ -1,2 +1,28 @@
 /* Css for the SCP page  */
 
+.Scp_List_Container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.Wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.Wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.Wave .shape-fill {
+    fill: rgb(20, 33, 61);
+}

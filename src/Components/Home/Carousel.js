@@ -13,7 +13,7 @@ export default function CarouseL() {
     };
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel activeIndex={index} onSelect={handleSelect} className='Carousel_container'>
             <Carousel.Item>
                 <img
                     className="d-block w-100 Carousel_Img"

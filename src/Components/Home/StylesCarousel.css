@@ -1,3 +1,10 @@
 .Carousel_Img{
-    height: 650px ;
+    max-height: 600px;
+    object-fit: scale-down;
+    border-radius: 60%;
+    filter: invert(90%)
+}
+
+.Carousel_container{
+    margin-top: 2em;
 }
