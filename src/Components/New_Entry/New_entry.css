@@ -1,1 +1,28 @@
 /* Css for the New Entry page */
+
+#Section_O_NewEntry form{
+    display: flex;
+    flex-direction: column;
+}
+#Section_O_NewEntry form{
+    align-items: center;
+}
+#form_NE input{
+   width: 50%;
+   border-radius: 20%;
+}
+
+#Section_O_NewEntry{
+    background:rgb(109, 138, 226) ;
+    border-radius: 10% 35% ;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#form_NE button:hover{
+    background: gold;
+}
+
+.labels{
+    color: white;
+}
