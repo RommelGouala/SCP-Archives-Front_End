@@ -1,4 +1,10 @@
 /* Css for the New Entry page */
+.New_Entry{
+    background: url('../Images/Bckg/mortality.jpg');
+    background-size: cover;
+    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+}
+
 
 #Section_O_NewEntry form{
     display: flex;
@@ -13,7 +19,6 @@
 }
 
 #Section_O_NewEntry{
-    background:rgb(109, 138, 226) ;
     border-radius: 10% 35% ;
     padding-top: 2em;
     padding-bottom: 2em;

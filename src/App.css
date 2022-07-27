@@ -1,4 +1,7 @@
-
+.App{
+  background: url('/src/Components/Images/Bckg/eclipse.jpg');
+  background-size: cover;
+}
 
 .App-logo {
   height: 40vmin;
