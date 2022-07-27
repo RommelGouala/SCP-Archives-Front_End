@@ -20,13 +20,13 @@ export default function Scp() {
     let content = null
 
     useEffect(() => {
-        axios.get(Url)
+        axios.get(Url, { headers: {'Access-Control-Allow-Origin': '*'}})
             .then(response => {
                 setScp_Image(response.data)
             })
     }, [Url])
 
-
+console.log(Scp_Image)
 
 
     console.log(Scp_Image)
@@ -35,23 +35,23 @@ export default function Scp() {
         content = Scp_Image.map(Scp_Img => {
             return (
                 <Card style={{ width: '18rem' }} key={Scp_Img.id}>
-                    <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                    <Card.Img variant="top" src={Scp_Img.image} />
                     <Card.Body>
-                        <Card.Title>{Scp_Img.name}</Card.Title>
+                        <Card.Title>SCP: {Scp_Img.id}</Card.Title>
                         <Card.Text>
                             Description: <br />{Scp_Img.description}
                         </Card.Text>
                         <Card.Text>
-                            Contaiment: <br />{Scp_Img.contaiment}
+                            Containment Procedure: <br />{Scp_Img.containment}
                         </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
 
-                        <ListGroup.Item>Location: <br /> {Scp_Img.location}</ListGroup.Item>
-                        <ListGroup.Item>Date: <br /> {Scp_Img.date} <br /> </ListGroup.Item>
+                        <ListGroup.Item>Location Discovered: <br /> {Scp_Img.location}</ListGroup.Item>
+                        <ListGroup.Item>Date Discovered: <br /> {Scp_Img.date} <br /> </ListGroup.Item>
                     </ListGroup>
                     <Card.Body>
-                        <Button variant="primary">Learn more</Button>
+                        <Button variant="primary">Read Entry</Button>
                     </Card.Body>
                 </Card>
             )
@@ -64,11 +64,11 @@ export default function Scp() {
             <h1>SCP Page List</h1>
             <div className="Scp_List_Container">
                 {content}
-                <div class="Wave">
+                {/* <div class="Wave">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                     </svg>
-                </div>
+                </div> */}
             </div>
         </div>
     )
