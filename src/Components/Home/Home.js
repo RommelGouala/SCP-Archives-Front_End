@@ -1,9 +1,11 @@
+import Navbars from "../Navbar_f/Navbar"
 import CarouseL from "./Carousel"
 import './StylesHome.css'
 
 const Home = () => {
   return (
     <div className="The_Home">
+      <Navbars/>
       <h1>SCP ARCHIVES</h1>
       <CarouseL/>
       <section className='Home_description_s'>

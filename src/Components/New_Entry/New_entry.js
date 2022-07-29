@@ -47,7 +47,7 @@ export default function New_entry () {
                     <label className="labels">Location</label>
                 <input type='text'value={location} onChange={(e) => setLocation(e.target.value)}required></input>
                     <label className="labels">Data</label>
-                <input type='date' value={date} onChange={(e) => setDate(e.target.value)} required></input>
+                <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31" value={date} onChange={(e) => setDate(e.target.value)} required></input>
                     <label className="labels">Description</label>
                 <input type='text'  value={description} onChange={(e) => setDescription(e.target.value)} required></input>
                     <label className="labels">Containment</label>

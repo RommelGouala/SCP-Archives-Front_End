@@ -1,0 +1,5 @@
+.The_News{
+    background: url('../Images/Bckg/texture.jpg');
+    background-size: cover;
+    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+}
