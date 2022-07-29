@@ -1,4 +1,10 @@
 /* Css for the New Entry page */
+.New_Entry{
+    background: url('../Images/Bckg/mortality.jpg');
+    background-size: cover;
+    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+}
+
 
 #Section_O_NewEntry form{
     display: flex;
@@ -8,12 +14,14 @@
     align-items: center;
 }
 #form_NE input{
-   width: 50%;
-   border-radius: 20%;
+    width: 50%;
+    border: 2px solid red;
+    border-radius: 20%;
+    background: transparent;
+    color: aliceblue;
 }
 
 #Section_O_NewEntry{
-    background:rgb(109, 138, 226) ;
     border-radius: 10% 35% ;
     padding-top: 2em;
     padding-bottom: 2em;
@@ -21,8 +29,25 @@
 
 #form_NE button:hover{
     background: gold;
+    color: black;
+}
+
+#form_NE button{
+    margin-top: 1em;
+    background: radial-gradient(red, blue);
+    color: aliceblue;
+    font: bold
 }
 
 .labels{
     color: white;
+    font-size: large;
+    text-transform:uppercase;
+    text-decoration: wavy;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.New_Entry h1{
+    color: aliceblue;
 }

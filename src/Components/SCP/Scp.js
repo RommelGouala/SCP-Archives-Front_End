@@ -10,6 +10,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import './Scp.css'
+import { Link } from "react-router-dom";
 
 
 export default function Scp() {
@@ -24,7 +25,7 @@ export default function Scp() {
             .then(response => {
                 setScp_Image(response.data)
             })
-    }, [Url])
+    }, [Url]);
 
 console.log(Scp_Image)
 
@@ -35,14 +36,11 @@ console.log(Scp_Image)
         content = Scp_Image.map(Scp_Img => {
             return (
                 <Card style={{ width: '18rem' }} key={Scp_Img.id}>
-                    <Card.Img variant="top" src={Scp_Img.image} />
+                    <Card.Img className="Carousel_img" variant="top" src={Scp_Img.image} />
                     <Card.Body>
                         <Card.Title>SCP: {Scp_Img.id}</Card.Title>
                         <Card.Text>
-                            Description: <br />{Scp_Img.description}
-                        </Card.Text>
-                        <Card.Text>
-                            Containment Procedure: <br />{Scp_Img.containment}
+                            Name: <br />{Scp_Img.name}
                         </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
@@ -51,7 +49,9 @@ console.log(Scp_Image)
                         <ListGroup.Item>Date Discovered: <br /> {Scp_Img.date} <br /> </ListGroup.Item>
                     </ListGroup>
                     <Card.Body>
+                    <Link to={`/scp/${Scp_Img.id}`}>
                         <Button variant="primary">Read Entry</Button>
+                    </Link> 
                     </Card.Body>
                 </Card>
             )
@@ -59,7 +59,7 @@ console.log(Scp_Image)
     }
 
     return (
-        <div>
+        <div className="The_SCP">
             <Navbars />
             <h1>SCP Page List</h1>
             <div className="Scp_List_Container">
