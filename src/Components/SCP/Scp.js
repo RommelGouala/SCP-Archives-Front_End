@@ -5,7 +5,6 @@
 import Navbars from "../Navbar_f/Navbar";
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';

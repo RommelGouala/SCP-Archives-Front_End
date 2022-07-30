@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Navbars from "../Navbar_f/Navbar";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 export default function Scp_Details(){
@@ -35,7 +36,9 @@ export default function Scp_Details(){
             <p>{scp_details.date}</p>
             <button onClick={handDelete}>Delete</button>
             <br/>
+        <Link to={`/scp/${scp_details.id}/edit`}>
             <button>Edit</button>
+        </Link>
             
             </div>
     ) 
