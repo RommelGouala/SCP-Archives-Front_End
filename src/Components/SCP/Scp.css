@@ -3,8 +3,11 @@
 .The_SCP{
     background: url('../Images/Bckg/sun.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+    width: 100vw;
+    height: 100%;
+   
 }
 .Scp_List_Container{
     display: flex;
