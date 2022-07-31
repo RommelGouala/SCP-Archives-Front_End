@@ -5,7 +5,7 @@
     position:relative; 
     top: 0; 
     left: 0; 
-    height: 100%; 
+    height: 100vh; 
     width: 100%;
     color: white;
 }
@@ -18,12 +18,18 @@
 #Section_O_NewEntry form{
     align-items: center;
 }
+
+
 #form_NE input{
     width: 50%;
     border: 2px solid red;
     border-radius: 20%;
     background: transparent;
     color: aliceblue;
+    
+}
+#form_NE label{
+    font-weight: bold;
 }
 
 #Section_O_NewEntry{

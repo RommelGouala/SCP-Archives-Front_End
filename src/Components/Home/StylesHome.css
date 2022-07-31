@@ -1,15 +1,31 @@
 .The_Home{
-    
-    margin: 0;
     background: url('/src/Components/Images/Bckg/eclipse.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100%;
-    color: aliceblue;
 }
 
+.The_Home h1{
+    text-align: center;
+    font-weight: bold;
+    color: azure;
+}
+.The_Home h2{
+    margin-top: 3em;
+    text-align: center;
+    font-weight: bold;
+    color: azure;
+}
+
+
 .Home_description_s{
-    margin-top: 1.5em;
+    margin-top: 2.5em;
+    background: black;
+
+}
+
+#Scp_description_p{
+    color: azure;
+    font-weight: 600;
 }

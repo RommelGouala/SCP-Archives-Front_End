@@ -1,0 +1,36 @@
+.The_ScpDetails p{
+    display: inline-block;
+    width: 50vw;
+}
+
+.The_ScpDetails{
+    background: black;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    color: aliceblue;
+    width: 100vw;
+    height: 125vh;
+}
+
+    
+.The_ScpDetails img{
+    width: 30vw;
+    height: 30vh;
+    object-fit: cover;
+    margin-top: 1.5em;
+}
+
+.The_button{
+    width: 10%;
+    display: inline-block;
+    border-radius: 60px;
+}
+
+.The_button:hover{
+    background-color: aqua;
+}
+
+
