@@ -6,8 +6,14 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100%;
-   
+    height: 100vh;
+}
+
+.The_SCP h1{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 1.5em;
 }
 .Scp_List_Container{
     display: flex;
@@ -41,9 +47,4 @@
     width: 100%;
     height: 30vh;
     object-fit: cover;
-}
-
-
-.The_SCP h1{
-    color: aliceblue;
 }
