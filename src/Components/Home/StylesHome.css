@@ -4,7 +4,6 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
 }
 
 .The_Home h1{
@@ -12,11 +11,21 @@
     font-weight: bold;
     color: azure;
 }
+.The_Home h2{
+    margin-top: 3em;
+    text-align: center;
+    font-weight: bold;
+    color: azure;
+}
+
 
 .Home_description_s{
     margin-top: 2.5em;
+    background: black;
+
 }
 
 #Scp_description_p{
-    text-align: center;
+    color: azure;
+    font-weight: 600;
 }
