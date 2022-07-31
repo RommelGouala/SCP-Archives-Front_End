@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Navbars from "../Navbar_f/Navbar";
 import axios from "axios";
@@ -10,6 +10,7 @@ export default function Scp_Details(){
     const { id } = useParams();
     const [scp_details, setScpDetails] = useState(null)
     const Url = `https://scp-backend-server.herokuapp.com/scp/${id}`
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(Url, { headers: {'Access-Control-Allow-Origin': '*'}})
@@ -20,24 +21,28 @@ export default function Scp_Details(){
 
     console.log(scp_details)
 
-    const handDelete = (e) =>{
-        e.preventDefault();
-        axios.delete(Url).then(response => console.log('Data Posted', response)).catch(err => console.log(err))
+    //delete now takes you back to the SCP archive list page
+    const handleDelete = async () => {
+        await fetch(`https://scp-backend-server.herokuapp.com/scp/${id}`, {
+            method: 'DELETE'
+        })
+        navigate('/scp', { replace:true })
     }
 
     const content = scp_details && (
         <div> 
             <h1>SCP-{scp_details.id} Entry</h1> 
-            <p>{scp_details.name}</p>
+            <h2>SCP Designation: {scp_details.name}</h2>
             <img src={scp_details.image} alt='pic'></img>
-            <p>{scp_details.description}</p>
-            <p>{scp_details.containment}</p>
-            <p>{scp_details.location}</p>
-            <p>{scp_details.date}</p>
-            <button onClick={handDelete}>Delete</button>
+            <p>Location Discovered: {scp_details.location}</p>
+            <p>Discovery Date: {scp_details.date}</p>
+            <p>Description: {scp_details.description}</p>
+            <p>Containment Procedures: {scp_details.containment}</p>
+
+            <button onClick={handleDelete}>Delete Entry</button>
             <br/>
         <Link to={`/scp/${scp_details.id}/edit`}>
-            <button>Edit</button>
+            <button>Edit Entry</button>
         </Link>
             
             </div>

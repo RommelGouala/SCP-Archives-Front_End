@@ -1,60 +1,71 @@
-// JS for the New Entry (We will build a form),
-//             name,
-//             location,
-//             date,
-//             image,
-//             description,
-//             containment
 
 import Navbars from "../Navbar_f/Navbar";
 import './New_entry.css'
 import { useState } from "react";
 import axios from 'axios'
+import { Navigate, useNavigate } from "react-router-dom";
+
+import classifiedImage from "../Images/Classified.jpg"
+
+const INITIAL_STATE = {
+    id: '',
+    name: 'No Current Designation',
+    location: '',
+    date: '',
+    description: '',
+    containment: 'No Known Containment Procedures',
+    image: `${classifiedImage}`,
+}
 
 export default function New_entry () {
-    
-    const [id, setId] = useState('')
-    const [name, setName] = useState('')
-    const [location, setLocation] = useState('')
-    const [date, setDate] = useState('')
-    const [description, setDescription] = useState('')
-    const [containment, setContainment] = useState('')
-    const [image, setImage] = useState('')
-    const Url = `https://scp-backend-server.herokuapp.com/new_entry`
 
-    const hadndleSubmit = (e) =>{
+    const [data, setData] = useState(INITIAL_STATE)
+    const navigate = useNavigate()
+
+    const handleChange = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = async (e) =>{
         e.preventDefault();
-        axios.post(Url,{
-            id,
-            name,
-            location,
-            date,
-            description,
-            containment,
-            image
-        }).then(response => console.log('Data Posted', response)).catch(err => console.log(err))
+
+        const response = await fetch('https://scp-backend-server.herokuapp.com/new_entry', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        // takes you back to the SCP archive page after submitting, before it would just stay on the form page
+        if (response.status !== 200) {
+            
+        } else {
+            navigate('/scp', { replace:true })
+        }
     }
     return (
         <div className="New_Entry">
             <Navbars/>
-            <h1>New Entry Page </h1>
+            <h1> New Archive Entry</h1>
             <section id="Section_O_NewEntry">
-                <form id="form_NE">
-                    <label className="labels">id</label>
-                <input type='number' value={id} onChange={(e) => setId(e.target.value)} required></input>
-                    <label className="labels">Name</label>
-                <input type='text' value={name} onChange={(e) => setName(e.target.value)} required></input>
-                    <label className="labels">Location</label>
-                <input type='text'value={location} onChange={(e) => setLocation(e.target.value)}required></input>
-                    <label className="labels">Data</label>
-                <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31" value={date} onChange={(e) => setDate(e.target.value)} required></input>
-                    <label className="labels">Description</label>
-                <input type='text'  value={description} onChange={(e) => setDescription(e.target.value)} required></input>
-                    <label className="labels">Containment</label>
-                <input type='text'  value={containment} onChange={(e) => setContainment(e.target.value)} required></input>
-                    <label className="labels">The Entry Image</label>
-                <input type='text'  value={image} onChange={(e) => setImage(e.target.value)} ></input>
-                <button onClick={hadndleSubmit}>Submit Entry</button>
+                <form onSubmit={handleSubmit} id="form_NE">
+                    <label className="labels">SCP ID*:</label>
+                    <input onChange={handleChange} required name='id' type='number' placeholder='SCP-ID' value={data.id} />
+                    <label className="labels">SCP Designation (Name):</label>
+                    <input onChange={handleChange} name='name' type='text' placeholder='SCP Designation (Name)' value={data.name} />
+                    <label className="labels">Location Discovered*:</label>
+                    <input onChange={handleChange} required name='location' type='text' placeholder='City, State/Country' value={data.location} />
+                    <label className="labels">Date Discovered*:</label>
+                    <input onChange={handleChange} required name='date' type='date' placeholder='Date Discovered' value={data.date} />
+                    <label className="labels">SCP Photograph:</label>
+                    <input onChange={handleChange} name='image' type='string' placeholder='SCP Photograph' value={data.image} />
+                    <label className="labels">SCP Description*:</label>
+                    <input onChange={handleChange} required name='description' type='text' placeholder='SCP Description' value={data.description} />
+                    <label className="labels">Containment Procedures:</label>
+                    <input onChange={handleChange} name='containment' type='text' placeholder='SCP Containment Procedure' value={data.containment} />
+
+                    <button type='submit'>Submit New Entry</button>
                 </form>
             </section>
         </div>
