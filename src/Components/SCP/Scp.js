@@ -13,8 +13,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Scp() {
-
-    const Url = `https://scp-backend-server.herokuapp.com/scp`
+    const Url = process.env.REACT_APP_SERVER_URL +'/scp'
     const [Scp_Image, setScp_Image] = useState(null)
 
     let content = null

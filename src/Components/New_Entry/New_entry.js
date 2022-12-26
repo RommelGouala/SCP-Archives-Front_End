@@ -18,6 +18,8 @@ const INITIAL_STATE = {
 
 export default function New_entry () {
 
+    const Url = process.env.REACT_APP_SERVER_URL +'/new_entry'
+
     const [data, setData] = useState(INITIAL_STATE)
     const navigate = useNavigate()
 
@@ -28,7 +30,7 @@ export default function New_entry () {
     const handleSubmit = async (e) =>{
         e.preventDefault();
 
-        const response = await fetch('https://scp-backend-server.herokuapp.com/new_entry', {
+        const response = await fetch(Url, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

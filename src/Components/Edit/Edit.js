@@ -7,7 +7,8 @@ import './Edit.css'
 
 export default function Edit() {
     const { id } = useParams()
-    const Url = `https://scp-backend-server.herokuapp.com/scp/${id}`
+
+    const Url = process.env.REACT_APP_SERVER_URL +`/scp/${id}`
     const navigate = useNavigate()
 
 const [name, setName] = useState('')
