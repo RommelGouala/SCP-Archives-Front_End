@@ -9,7 +9,7 @@ import './Styles-Scp-details.css'
 export default function Scp_Details() {
     const { id } = useParams();
     const [scp_details, setScpDetails] = useState(null)
-    const Url = `https://scp-backend-server.herokuapp.com/scp/${id}`
+    const Url = process.env.REACT_APP_SERVER_URL +`/scp/${id}`
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function Scp_Details() {
 
     //delete now takes you back to the SCP archive list page
     const handleDelete = async () => {
-        await fetch(`https://scp-backend-server.herokuapp.com/scp/${id}`, {
+        await fetch(Url, {
             method: 'DELETE'
         })
         navigate('/scp', { replace: true })
