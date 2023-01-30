@@ -1,5 +1,5 @@
 
-# READ ME:
+
 # About:
 
 This is the front end code for our SCP project. SCP stands for Secure, Contain, Protect. See https://scp-wiki.wikidot.com/ for more info into SCPs.
@@ -7,6 +7,51 @@ With this site you can create SCP entries, veiw current list of entries, and edi
 
 Please Note: The SCPs listed on this are entirely made up and are not a part of the SCP universe.
 
+
+
+
+
+## Installation
+ 
+The Repo is not public. But imagine how someone could install it if it was public.
+
+Clone the repository
+Copy code
+```bash
+git clone https://github.com/RommelGouala/SCP-Archives-Front_End.git
+```
+Install dependencies
+Copy code
+```bash
+npm install
+```
+Start the development server
+Copy code
+
+```bash
+npm start
+```
+
+## Dockerfile
+
+| Docker                        |
+| ------------------------------|
+ ```bash
+FROM node:15.11.0-alpine
+
+WORKDIR /app
+
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]                          
+``
 
 # Getting Started with Create React App
 
