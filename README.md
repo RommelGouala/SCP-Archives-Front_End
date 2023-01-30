@@ -51,7 +51,7 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "start"]                          
-``
+```
 
 # Getting Started with Create React App
 
